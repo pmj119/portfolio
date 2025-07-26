@@ -1,78 +1,60 @@
 // 🌙 Dark Mode Toggle
-const toggleBtn = document.getElementById("toggleBtn");
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  toggleBtn.textContent = document.body.classList.contains("dark")
-    ? "☀️ Light Mode"
-    : "🌙 Dark Mode";
+const toggleBtn = document.getElementById('toggleBtn');
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
 });
 
-// ⌨️ Typing Effect
-const phrases = [
-  "Frontend Developer",
-  "Web Designer",
-  "JavaScript Enthusiast"
-];
-let currentPhrase = 0, charIndex = 0;
+// ✍️ Typing Effect
 const typedText = document.getElementById("typed-text");
+const phrases = ["Frontend Developer", "Creative Coder", "UI/UX Enthusiast", "React Learner"];
+let i = 0, j = 0, isDeleting = false;
 
 function type() {
-  const current = phrases[currentPhrase];
-  typedText.textContent = current.slice(0, charIndex++);
-  if (charIndex > current.length) {
-    setTimeout(() => {
-      charIndex = 0;
-      currentPhrase = (currentPhrase + 1) % phrases.length;
-      type();
-    }, 1200);
-  } else {
+  let current = phrases[i];
+  let displayed = current.substring(0, j);
+
+  typedText.textContent = displayed;
+
+  if (!isDeleting && j < current.length) {
+    j++;
     setTimeout(type, 100);
+  } else if (isDeleting && j > 0) {
+    j--;
+    setTimeout(type, 60);
+  } else {
+    isDeleting = !isDeleting;
+    if (!isDeleting) i = (i + 1) % phrases.length;
+    setTimeout(type, 1000);
   }
 }
 type();
 
 // ⬆️ Scroll to Top Button
 const scrollBtn = document.getElementById("scrollToTopBtn");
-window.onscroll = () => {
-  scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
-};
-scrollBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
-// 🍔 Hamburger Menu
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("navMenu");
-hamburger.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-});
-
-// 🎯 ScrollSpy - Highlight Active Nav Link
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-menu a");
-
 window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 120;
-    if (window.scrollY >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href").includes(current)) {
-      link.classList.add("active");
-    }
-  });
+  if (window.scrollY > 200) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+});
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// ⏳ Preloader
+// 🍔 Hamburger Toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+
+// ⏳ Preloader Fadeout
 window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
-  preloader.style.opacity = "0";
-  preloader.style.pointerEvents = "none";
-  setTimeout(() => preloader.remove(), 500);
+  if (preloader) {
+    preloader.style.opacity = "0";
+    preloader.style.pointerEvents = "none";
+    setTimeout(() => preloader.remove(), 1000);
+  }
 });

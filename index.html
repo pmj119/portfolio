@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="I'm Prathamesh Jadhav, a frontend developer building beautiful responsive websites." />
-  <title>Prathamesh Jadhav | Frontend Developer</title>
+  <meta name="description" content="Prathamesh Jadhav - Creative Frontend Developer building modern websites with HTML, CSS, and JavaScript." />
+  <title>Prathamesh Jadhav | Creative Frontend Developer</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="logo">Prathamesh</a>
+      <a href="#" class="logo">🌟 Prathamesh</a>
       <div class="hamburger" id="hamburger">☰</div>
       <ul class="nav-menu" id="navMenu">
         <li><a href="#home">Home</a></li>
@@ -35,76 +36,89 @@
   <!-- Hero Section -->
   <header class="hero" id="home">
     <img src="profile.jpg" alt="Prathamesh Photo" class="profile-img" />
-    <h1>Prathamesh Jadhav</h1>
-    <p><span id="typed-text"></span></p>
-    <button id="toggleBtn">🌙 Dark Mode</button>
+    <h1><span class="gradient-text">Prathamesh Jadhav</span></h1>
+    <p id="typed-text"></p>
+    <p class="hero-tagline">Designing sleek interfaces. Developing clean code. Delivering smooth experiences.</p>
+    <a href="#projects" class="hero-btn">Explore Projects ↓</a>
+    <button id="toggleBtn" class="toggle-mode">🌙</button>
   </header>
 
   <main>
     <!-- About Section -->
-    <section id="about" data-aos="fade-up">
+    <section id="about" class="section" data-aos="fade-up">
       <h2>About Me</h2>
-      <p>I’m a passionate frontend developer focused on building clean and user-friendly websites. Currently learning React.js and aiming to become a full-stack developer.</p>
+      <p>I'm a frontend developer from India with a passion for crafting clean, user-centric, and modern websites. I enjoy bringing ideas to life in the browser and constantly push my skills in HTML, CSS, JS, and React.</p>
+      <p>I value minimalism, readability, and great user experience. Always learning, always building.</p>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" data-aos="fade-right">
-      <h2>Skills</h2>
+    <section id="skills" class="section colored" data-aos="fade-up">
+      <h2>Skills & Tools</h2>
       <div class="skill-grid">
-        <div class="skill-card">HTML5</div>
-        <div class="skill-card">CSS3</div>
-        <div class="skill-card">JavaScript</div>
-        <div class="skill-card">Responsive Design</div>
-        <div class="skill-card">Git & GitHub</div>
-        <div class="skill-card">React (Learning)</div>
+        <div class="skill-card">⚡ HTML5</div>
+        <div class="skill-card">🎨 CSS3</div>
+        <div class="skill-card">🧠 JavaScript</div>
+        <div class="skill-card">📱 Responsive Design</div>
+        <div class="skill-card">🛠️ Git & GitHub</div>
+        <div class="skill-card">⚛️ React.js</div>
+        <div class="skill-card">🧩 AOS Animations</div>
+        <div class="skill-card">🎯 UI/UX Principles</div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" data-aos="zoom-in">
-      <h2>Projects</h2>
+    <section id="projects" class="section" data-aos="fade-up">
+      <h2>My Projects</h2>
+      <p class="section-tagline">Some cool things I’ve built recently.</p>
       <div class="project-grid">
         <div class="project-card">
-          <img src="project1.jpg" alt="Project 1" />
-          <h3>Landing Page</h3>
-          <p>Clean mobile-first landing page using Flexbox & Grid.</p>
-          <a href="#">View Project</a>
+          <img src="project1.jpg" alt="Landing Page Project" />
+          <div class="project-info">
+            <h3>Landing Page</h3>
+            <p>Mobile-first layout using Flexbox, animations, and vibrant design.</p>
+            <a href="#" target="_blank">🔗 View Live</a>
+          </div>
         </div>
         <div class="project-card">
-          <img src="project2.jpg" alt="Project 2" />
-          <h3>Weather App</h3>
-          <p>Real-time weather using OpenWeatherMap API.</p>
-          <a href="#">View Project</a>
+          <img src="project2.jpg" alt="Weather App Project" />
+          <div class="project-info">
+            <h3>Weather App</h3>
+            <p>Live weather data using OpenWeather API and JS logic for city search.</p>
+            <a href="#" target="_blank">🔗 View Live</a>
+          </div>
         </div>
         <div class="project-card">
-          <img src="project3.jpg" alt="Project 3" />
-          <h3>To-Do App</h3>
-          <p>Simple JavaScript to-do app with local storage.</p>
-          <a href="#">View Project</a>
+          <img src="project3.jpg" alt="To-Do App Project" />
+          <div class="project-info">
+            <h3>To-Do App</h3>
+            <p>Manage tasks with localStorage persistence and beautiful UI flow.</p>
+            <a href="#" target="_blank">🔗 View Live</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" data-aos="fade-up">
+    <section id="contact" class="section colored" data-aos="fade-up">
       <h2>Contact Me</h2>
+      <p>If you’re looking for a creative and reliable frontend developer to collaborate on a project or build your dream site — I’d love to hear from you!</p>
       <form action="https://formsubmit.co/your@email.com" method="POST">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
         <button type="submit">Send Message</button>
       </form>
-      <p style="margin-top: 1rem;">
-        📧 <a href="mailto:prathamesh@example.com">prathamesh@example.com</a><br />
-        💻 <a href="https://github.com/prathameshjadhav" target="_blank">My GitHub</a><br />
-        📄 <a href="Prathamesh_Jadhav_OnePage_Resume.pdf" target="_blank">Download Resume</a>
-      </p>
+      <div class="contact-info">
+        <p>📧 <a href="mailto:prathamesh@example.com">prathamesh@example.com</a></p>
+        <p>💻 <a href="https://github.com/prathameshjadhav" target="_blank">GitHub: @prathameshjadhav</a></p>
+        <p>📄 <a href="Prathamesh_Jadhav_OnePage_Resume.pdf" target="_blank">Download Resume</a></p>
+      </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer role="contentinfo">
-    <p>© 2025 Prathamesh Jadhav. All rights reserved.</p>
+  <footer class="footer">
+    <p>🚀 Designed & Developed by <strong>Prathamesh Jadhav</strong> — 2025</p>
   </footer>
 
   <!-- Scroll to Top -->
@@ -113,11 +127,7 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({
-      once: true,
-      duration: 800,
-      offset: 100
-    });
+    AOS.init({ once: true, duration: 800, offset: 100 });
   </script>
   <script src="script.js"></script>
 </body>
