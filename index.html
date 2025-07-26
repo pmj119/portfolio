@@ -7,3 +7,266 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #f9f9f9;
+      --text: #333;
+      --card-bg: #fff;
+      --accent: #4CAF50;
+    }
+
+    body.dark {
+      --bg: #111;
+      --text: #eee;
+      --card-bg: #222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #000;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    #typed-text {
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    #toggleBtn {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeIn 0.8s forwards;
+    }
+
+    section:nth-child(odd) { animation-delay: 0.2s; }
+    section:nth-child(even) { animation-delay: 0.4s; }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      border-left: 5px solid var(--accent);
+      padding-left: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .project {
+      background: var(--card-bg);
+      border: 1px solid #444;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transform: scale(1);
+    }
+
+    .project:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .project a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    input, textarea {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button[type="submit"] {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #000;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Prathamesh Jadhav</h1>
+    <p><span id="typed-text"></span></p>
+    <button id="toggleBtn">🌙 Dark Mode</button>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m a frontend developer who loves building beautiful and responsive websites. I'm currently learning React and aiming to become a full-stack developer.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>✅ HTML5, CSS3, JavaScript</li>
+        <li>✅ Responsive Web Design</li>
+        <li>✅ Git & GitHub</li>
+        <li>✅ Learning React.js</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>💻 Responsive Landing Page</h3>
+        <p>Clean mobile-first design using Flexbox & Grid.</p>
+        <a href="#">View Project</a>
+      </div>
+
+      <div class="project">
+        <h3>🌦️ Weather App</h3>
+        <p>Uses OpenWeatherMap API for real-time weather updates.</p>
+        <a href="#">View Project</a>
+      </div>
+
+      <div class="project">
+        <h3>📝 To-Do List</h3>
+        <p>Simple to-do app with local storage in JavaScript.</p>
+        <a href="#">View Project</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="https://formsubmit.co/your@email.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p style="margin-top: 1rem;">
+        📧 <a href="mailto:prathamesh@example.com">prathamesh@example.com</a><br />
+        💻 <a href="https://github.com/prathameshjadhav" target="_blank">My GitHub</a><br />
+        📄 <a href="Prathamesh-Jadhav-Resume.pdf" target="_blank">Download Resume</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Prathamesh Jadhav. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Typing Animation and Dark Mode -->
+  <script>
+    const toggleBtn = document.getElementById("toggleBtn");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      toggleBtn.textContent =
+        document.body.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
+    });
+
+    // Typing effect
+    const phrases = ["Frontend Developer", "Web Designer", "JavaScript Enthusiast"];
+    let currentPhrase = 0;
+    let charIndex = 0;
+    const typedText = document.getElementById("typed-text");
+
+    function type() {
+      const current = phrases[currentPhrase];
+      typedText.textContent = current.slice(0, charIndex++);
+      if (charIndex > current.length) {
+        setTimeout(() => {
+          charIndex = 0;
+          currentPhrase = (currentPhrase + 1) % phrases.length;
+          type();
+        }, 1000);
+      } else {
+        setTimeout(type, 100);
+      }
+    }
+
+    type();
+  </script>
+</body>
+</html>
