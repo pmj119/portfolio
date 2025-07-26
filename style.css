@@ -155,6 +155,33 @@ h1, h2, h3 {
 .hero-btn:hover {
   transform: translateY(-2px);
 }
+.hero-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  background: conic-gradient(var(--primary), var(--secondary), var(--primary));
+  padding: 6px;
+  border-radius: 50%;
+  animation: rotateBorder 5s linear infinite;
+  width: 150px;
+  height: 150px;
+}
+
+@keyframes rotateBorder {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.advanced-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
 .toggle-mode {
   position: absolute;
   top: 20px;
