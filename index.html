@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prathamesh Jadhav | Frontend Developer</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
-<body>
 
+<body>
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="#" class="logo">Prathamesh</a>
@@ -23,48 +26,61 @@
     </div>
   </nav>
 
-  <header>
+  <!-- Hero Section -->
+  <header class="hero">
+    <img src="profile.jpg" alt="Prathamesh Photo" class="profile-img" />
     <h1>Prathamesh Jadhav</h1>
     <p><span id="typed-text"></span></p>
     <button id="toggleBtn">🌙 Dark Mode</button>
   </header>
 
   <main>
-    <section id="about">
+    <!-- About Section -->
+    <section id="about" data-aos="fade-up">
       <h2>About Me</h2>
-      <p>I’m a frontend developer who loves building beautiful and responsive websites. Currently learning React and aiming to become a full-stack developer.</p>
+      <p>I’m a passionate frontend developer focused on building clean and user-friendly websites. Currently learning React.js and aiming to become a full-stack developer.</p>
     </section>
 
-    <section id="skills">
+    <!-- Skills Section -->
+    <section id="skills" data-aos="fade-right">
       <h2>Skills</h2>
-      <ul>
-        <li>✅ HTML5, CSS3, JavaScript</li>
-        <li>✅ Responsive Web Design</li>
-        <li>✅ Git & GitHub</li>
-        <li>✅ Learning React.js</li>
-      </ul>
+      <div class="skill-grid">
+        <div class="skill-card">HTML5</div>
+        <div class="skill-card">CSS3</div>
+        <div class="skill-card">JavaScript</div>
+        <div class="skill-card">Responsive Design</div>
+        <div class="skill-card">Git & GitHub</div>
+        <div class="skill-card">React (Learning)</div>
+      </div>
     </section>
 
-    <section id="projects">
+    <!-- Projects Section -->
+    <section id="projects" data-aos="zoom-in">
       <h2>Projects</h2>
-      <div class="project">
-        <h3>💻 Responsive Landing Page</h3>
-        <p>Clean mobile-first design using Flexbox & Grid.</p>
-        <a href="#">View Project</a>
-      </div>
-      <div class="project">
-        <h3>🌦️ Weather App</h3>
-        <p>Uses OpenWeatherMap API for real-time weather updates.</p>
-        <a href="#">View Project</a>
-      </div>
-      <div class="project">
-        <h3>📝 To-Do List</h3>
-        <p>Simple to-do app with local storage in JavaScript.</p>
-        <a href="#">View Project</a>
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="project1.jpg" alt="Project 1" />
+          <h3>Landing Page</h3>
+          <p>Clean mobile-first landing page using Flexbox & Grid.</p>
+          <a href="#">View Project</a>
+        </div>
+        <div class="project-card">
+          <img src="project2.jpg" alt="Project 2" />
+          <h3>Weather App</h3>
+          <p>Real-time weather using OpenWeatherMap API.</p>
+          <a href="#">View Project</a>
+        </div>
+        <div class="project-card">
+          <img src="project3.jpg" alt="Project 3" />
+          <h3>To-Do App</h3>
+          <p>Simple JavaScript to-do app with local storage.</p>
+          <a href="#">View Project</a>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" data-aos="fade-up">
       <h2>Contact Me</h2>
       <form action="https://formsubmit.co/your@email.com" method="POST">
         <input type="text" name="name" placeholder="Your Name" required />
@@ -80,12 +96,24 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 Prathamesh Jadhav. All rights reserved.</p>
   </footer>
 
+  <!-- Scroll to Top -->
   <button id="scrollToTopBtn" title="Go to top">⬆</button>
 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      offset: 100
+    });
+  </script>
   <script src="script.js"></script>
 </body>
+
 </html>

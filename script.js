@@ -7,7 +7,7 @@ toggleBtn.addEventListener("click", () => {
     : "🌙 Dark Mode";
 });
 
-// ⌨️ Typing Effect
+// ⌨️ Typing Animation
 const phrases = [
   "Frontend Developer",
   "Web Designer",
@@ -24,14 +24,14 @@ function type() {
       charIndex = 0;
       currentPhrase = (currentPhrase + 1) % phrases.length;
       type();
-    }, 1000);
+    }, 1200);
   } else {
     setTimeout(type, 100);
   }
 }
 type();
 
-// ⬆️ Scroll to Top Button
+// ⬆️ Scroll-to-Top Button
 const scrollBtn = document.getElementById("scrollToTopBtn");
 window.onscroll = () => {
   scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
