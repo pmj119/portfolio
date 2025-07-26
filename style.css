@@ -237,6 +237,11 @@ footer {
   .nav-menu li {
     margin-bottom: 1rem;
   }
+  .nav-menu a.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
 }
 /* Preloader */
 #preloader {
